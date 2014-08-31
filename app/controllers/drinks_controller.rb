@@ -2,6 +2,14 @@ class DrinksController < InheritedResources::Base
   before_filter :authenticate_user!, only: [:new, :create]
 
   def create
+    tmp = {}
+    params['drink']['drink_ingredients_attributes'].each do |k,v|
+      if v['amount'].present? and v['amount_unit'].present? and v['ingredient_id'].present?
+        tmp[k] = v
+      end
+    end
+    params['drink']['drink_ingredients_attributes'] = tmp
+
     @drink = build_resource
     @drink.user_id = current_user
 
