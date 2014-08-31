@@ -9,6 +9,8 @@ nav.top-bar data-topbar=''
   
   section.top-bar-section
     ul.right
+      li= link_to 'Randomizer', randomizer_path
+      li= link_to 'Browse Drinks', drinks_path
       - if user_signed_in?
         /li.has-form
           .row.collapse
@@ -23,7 +25,5 @@ nav.top-bar data-topbar=''
         li= link_to 'Add Ingredient', new_ingredient_path
         li= link_to 'My Account', edit_user_registration_path
       - else
-        li= link_to 'Randomizer', randomizer_path
-        li= link_to 'Browse Drinks', drinks_path
         li= link_to 'Create account', new_user_registration_path
         li= link_to 'Sign in', new_user_session_path
