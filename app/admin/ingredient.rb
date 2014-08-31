@@ -6,7 +6,7 @@ ActiveAdmin.register Ingredient do
 
   remove_filter :bar_ingredients
 
-  index :as => :sortable do
+  index do
     label :name
       actions
   end
