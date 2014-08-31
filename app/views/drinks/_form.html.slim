@@ -13,8 +13,8 @@
     = f.fields_for :drink_ingredients do |dif|
       = render "drink_ingredient_row", :f => dif
 
-  /= f.input :description
-  /= f.input :instructions
   = f.input :garnish_id, collection: Garnish.all
+  = f.input :instructions
+  = f.input :description
   /= f.input :image_url
   = f.button :submit
