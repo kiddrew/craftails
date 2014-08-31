@@ -1,13 +1,1 @@
-.row
-  .small-12
-    h3= @drink.name
-.row
-  .small-8.columns
-    ul
-      - @drink.drink_ingredients.each do |di|
-        li
-          = unit_pluralize(di.amount, di.amount_unit) + ' ' + di.ingredient.name
-
-  .small-4.columns
-    p
-      = drink_image @drink.image_url
+== render 'recipe'
