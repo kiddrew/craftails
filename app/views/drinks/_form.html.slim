@@ -1,0 +1,20 @@
+= simple_form_for @drink do |f|
+  = f.error_notification
+
+  = f.input :name
+
+  = f.label :ingredients
+  table#ingredient_list
+    tr
+      th width="200" Amount
+      th Unit
+      th Ingredient
+      th
+    = f.fields_for :drink_ingredients do |dif|
+      = render "drink_ingredient_row", :f => dif
+
+  /= f.input :description
+  /= f.input :instructions
+  = f.input :garnish_id, collection: Garnish.all
+  /= f.input :image_url
+  = f.button :submit

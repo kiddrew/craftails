@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @glass.name
+p
+  strong Image url:
+  = @glass.image_url
+
+= link_to 'Edit', edit_glass_path(@glass)
+'|
+= link_to 'Back', glasses_path

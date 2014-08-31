@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: andrew
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: craftails_dev
+
+test:
+  <<: *default
+  database: craftails_test
+
+production:
+  <<: *default
+  host: ec2-54-197-246-197.compute-1.amazonaws.com
+  database: d63s9j4a15nr7q
+  username: ypuzstgwwwttns
+  password: _IZY9XoTYY9oURrdzqL5wwwW82

@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong User:
+  = @bar.user_id
+
+= link_to 'Edit', edit_bar_path(@bar)
+'|
+= link_to 'Back', bars_path

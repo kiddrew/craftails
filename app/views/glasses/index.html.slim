@@ -1,0 +1,23 @@
+h1 Listing glasses
+
+table
+  thead
+    tr
+      th Name
+      th Image url
+      th
+      th
+      th
+
+  tbody
+    - @glasses.each do |glass|
+      tr
+        td = glass.name
+        td = glass.image_url
+        td = link_to 'Show', glass
+        td = link_to 'Edit', edit_glass_path(glass)
+        td = link_to 'Destroy', glass, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Glass', new_glass_path

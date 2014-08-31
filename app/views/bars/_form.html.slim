@@ -1,0 +1,13 @@
+= simple_form_for @bar do |f|
+  = f.error_notification
+
+  table
+    tr
+      th
+      th= Ingredient
+    = collection_check_boxes :bar, :ingredient_ids, Ingredient.all.sort_by { |o| o.canonical_name }, :id, :option_name do |b|
+      tr
+        td= b.object.is_selectable? ? b.check_box : ''
+        td= b.label
+
+  = f.button :submit

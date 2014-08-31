@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @garnish.name
+p
+  strong Description:
+  = @garnish.description
+p
+  strong Image url:
+  = @garnish.image_url
+
+= link_to 'Edit', edit_garnish_path(@garnish)
+'|
+= link_to 'Back', garnishes_path

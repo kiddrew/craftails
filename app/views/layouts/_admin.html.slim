@@ -1,0 +1,7 @@
+- if current_user.present? and current_user.is_admin?
+  nav.admin role="admin"
+    .collapse.navbar-collapse#navbar-collapse-1
+      ul
+        li= link_to admin_root_path do
+          = fa_icon 'cogs'
+          |  Admin

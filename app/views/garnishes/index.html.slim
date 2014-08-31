@@ -1,0 +1,25 @@
+h1 Listing garnishes
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Image url
+      th
+      th
+      th
+
+  tbody
+    - @garnishes.each do |garnish|
+      tr
+        td = garnish.name
+        td = garnish.description
+        td = garnish.image_url
+        td = link_to 'Show', garnish
+        td = link_to 'Edit', edit_garnish_path(garnish)
+        td = link_to 'Destroy', garnish, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Garnish', new_garnish_path

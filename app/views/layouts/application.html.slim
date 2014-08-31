@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Craftails
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+  body class=controller_name class=action_name
+    .wrap
+      = render 'layouts/navigation'
+
+      .row
+        - flash.each do |name, msg|
+          div class=flash_class(name) data-alert=""
+            = msg
+            a.close href="#" &times;
+        #content
+          = content_for?(:content) ? yield(:content) : yield
+  = yield :javascript
+

@@ -1,0 +1,7 @@
+tr.drink_ingredient_row
+  td= f.input :amount, label: false
+  td= f.input :amount_unit, collection: DrinkIngredient::UNITS, label: false
+  td= f.input :ingredient_id, collection: Ingredient.sort_by_name, label: false
+  td
+    a.remove_ingredient
+      = fa_icon 'times-circle', class: 'red'

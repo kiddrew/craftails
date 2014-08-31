@@ -1,0 +1,29 @@
+nav.top-bar data-topbar=''
+  ul.title-area
+    li.name
+      h1
+        = link_to root_path do
+          = image_tag 'logo-textonly.png'
+    li.toggle-topbar.menu-icon
+      = link_to 'Menu', '#'
+  
+  section.top-bar-section
+    ul.right
+      - if user_signed_in?
+        /li.has-form
+          .row.collapse
+            .large-8.small-9.columns
+              input type="text"
+            .large-4.small-3.columns
+              a.button.expand href="#" 
+                = fa_icon 'search'
+        /li= link_to 'My Bar', my_bar_path
+        li= link_to 'Add Drink', new_drink_path
+        li= link_to 'Browse Ingredients', ingredients_path
+        li= link_to 'Add Ingredient', new_ingredient_path
+        li= link_to 'My Account', edit_user_registration_path
+      - else
+        li= link_to 'Randomizer', randomizer_path
+        li= link_to 'Browse Drinks', drinks_path
+        li= link_to 'Create account', new_user_registration_path
+        li= link_to 'Sign in', new_user_session_path

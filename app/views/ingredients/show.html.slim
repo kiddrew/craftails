@@ -1,0 +1,17 @@
+h1 Ingredient Detail
+
+p
+  strong Name: 
+  = @ingredient.name
+p
+  strong Image url: 
+  = @ingredient.image_url
+p
+  strong Description: 
+  = @ingredient.description
+p
+  strong Is selectable: 
+  = @ingredient.is_selectable
+p
+  strong Category: 
+  = @ingredient.parent ? @ingredient.parent.name : ''

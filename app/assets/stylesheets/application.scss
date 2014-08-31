@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require font-awesome
+ *= require foundation_and_overrides
+ *= require sortable_tree
+ *= require nested_options
+ */
+
+/* colors */
+$red: #a31e39;
+$grey1: #485c5a;
+$grey2: #8c9c9a;
+$grey3: #9db2b1;
+$grey4: #bfcfcc;
+$grey5: #d6e4e1;
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+}
+
+.push {
+  height: 80px;
+  clear: both;
+}
+
+li.name > h1 > a > img {
+  height: 20px;
+}
+
+footer {
+  height: 60px;
+  clear: both;
+  border-top: 1px solid #ddd;
+  padding-top: 19px;
+}
+
+footer > ul {
+  font-size: 0.8em !important;
+  list-style: none;
+}
+
+footer > ul > li {
+  float: left;
+  padding: 0 20px;
+}
+
+nav.admin {
+  min-height: 0;
+  padding: 0;
+  margin: 0 !important;
+  background-color: #fff !important;
+}
+nav.admin ul > li > a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+nav.admin ul {
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 0.8em !important;
+}
+
+.red {
+  color: #d00;
+}
