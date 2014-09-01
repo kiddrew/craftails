@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :drinks
-  resources :ingredients
+  resources :drinks, only: [:index, :show, :new, :create, :edit, :update]
+  resources :ingredients, only: [:index, :show, :new, :create, :edit, :update]
 
   resources :bars, only: [:update]
   get 'my_bar' => 'bars#edit'
