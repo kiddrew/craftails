@@ -12,9 +12,10 @@
       = @drink.instructions
     p
       = @drink.description
-    p
-      | Garnish with a 
-      = @drink.garnish.name
+    - if @drink.garnish
+      p
+        | Garnish with a 
+        = @drink.garnish.name
 
   .small-4.columns
     p
