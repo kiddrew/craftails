@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'newrelic_rpm'
 gem 'indefinite_article'
+gem 'friendly_id'
 
 # forms
 gem 'simple_form'
