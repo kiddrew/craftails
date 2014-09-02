@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722205753) do
+ActiveRecord::Schema.define(version: 20140902042915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 20140722205753) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "drink_ingredients", ["drink_id", "ingredient_id"], name: "index_drink_ingredients_on_drink_id_and_ingredient_id", unique: true, using: :btree
+  add_index "drink_ingredients", ["drink_id"], name: "index_drink_ingredients_on_drink_id", using: :btree
+  add_index "drink_ingredients", ["ingredient_id"], name: "index_drink_ingredients_on_ingredient_id", using: :btree
 
   create_table "drinks", force: true do |t|
     t.string   "name"
