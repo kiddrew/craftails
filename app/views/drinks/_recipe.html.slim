@@ -3,26 +3,19 @@
     h3= @drink.name
 .row
   .small-8.columns
-    ul
-      - @drink.drink_ingredients.each do |di|
-        li
-          = unit_pluralize(di.amount, di.amount_unit) + ' ' + di.ingredient.name
+    p
+      ul
+        - @drink.drink_ingredients.each do |di|
+          li
+            = unit_pluralize(di.amount, di.amount_unit) + ' ' + di.ingredient.name
+    p
+      = @drink.instructions
+    p
+      = @drink.description
+    p
+      | Garnish with a 
+      = @drink.garnish.name
 
   .small-4.columns
     p
       = drink_image @drink.image_url
-
-.row
-  .small-12.columns
-    p
-      = @drink.instructions
-.row
-  .small-12.columns
-    p
-      = @drink.description
-
-.row
-  .small-12.columns
-    p
-      | Garnish with a 
-      = @drink.garnish.name
