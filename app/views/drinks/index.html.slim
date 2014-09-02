@@ -1,7 +1,6 @@
 h1 Listing drinks
 
-table
-  tbody
-    - @drinks.each do |drink|
-      tr
-        td = link_to drink.name, drink
+- @drinks.each do |drink|
+  = link_to drink do
+    = drink.name
+
