@@ -16,6 +16,7 @@ gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree"
 gem 'font-awesome-rails'
 gem 'foundation-rails'
 gem 'newrelic_rpm'
+gem 'indefinite_article'
 
 # forms
 gem 'simple_form'

@@ -14,8 +14,8 @@
       = @drink.description
     - if @drink.garnish
       p
-        | Garnish with a 
-        = @drink.garnish.name
+        | Garnish with
+        = @drink.garnish.name.indefinitize
 
   .small-4.columns
     p
