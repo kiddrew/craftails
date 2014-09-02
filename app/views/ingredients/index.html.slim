@@ -2,10 +2,5 @@ h1 Listing ingredients
 
 - @ingredients.each do |ingredient|
   = link_to ingredient do
-    = ingredient.option_name
+    div= ingredient.option_name
 
-/table
-  tbody
-    - @ingredients.each do |ingredient|
-      tr
-        td = link_to ingredient.option_name, ingredient
