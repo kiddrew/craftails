@@ -4,6 +4,11 @@ class DrinksController < InheritedResources::Base
   before_filter :authenticate_admin!, only: [:edit, :update]
   before_action :prepare_params, only: [:create, :update]
 
+  def index
+    @drinks = Drink.order('name')
+    index!
+  end
+
   def edit
     @drink = Drink.find(params['id'])
     (6-@drink.ingredients.count).times do
