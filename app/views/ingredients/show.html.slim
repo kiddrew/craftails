@@ -1,17 +1,14 @@
-h1 Ingredient Detail
+.row
+  .small-12
+    h3= @ingredient.name
+.row
+  .small-8.columns
+    p
+      = @ingredient.description or 'No description'
 
-p
-  strong Name: 
-  = @ingredient.name
-p
-  strong Image url: 
-  = @ingredient.image_url
-p
-  strong Description: 
-  = @ingredient.description
-p
-  strong Is selectable: 
-  = @ingredient.is_selectable
-p
-  strong Category: 
-  = @ingredient.parent ? @ingredient.parent.name : ''
+  .small-4.columns
+    p
+      = drink_image @ingredient.image_url
+
+- if current_user.is_admin
+  = link_to 'Edit', edit_ingredient_path(@ingredient), class: 'button'
