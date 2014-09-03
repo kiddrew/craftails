@@ -5,3 +5,6 @@ hr
 == render 'recipe'
 
 = link_to 'Try another', randomizer_path, class: 'button'
+
+- if current_user.is_admin
+  = link_to 'Edit', edit_drink_path(@drink), class: 'button'
