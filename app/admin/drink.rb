@@ -1,5 +1,5 @@
 ActiveAdmin.register Drink do
-  permit_params :name
+  permit_params :name, :garnish_id, :garnish2_id, :drink_ingredients => {}
 
   index do
     column :name

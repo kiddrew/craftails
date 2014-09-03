@@ -14,6 +14,7 @@
         = render "drink_ingredient_row", :f => dif
 
   = f.input :garnish_id, collection: Garnish.all
+  = f.input :garnish2_id, collection: Garnish.all, label: 'Second Garnish'
   = f.input :instructions
   = f.input :description
   /= f.input :image_url

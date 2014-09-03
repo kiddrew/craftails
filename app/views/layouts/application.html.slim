@@ -19,5 +19,7 @@ html
             a.close href="#" &times;
         #content
           = content_for?(:content) ? yield(:content) : yield
+      .push
+    = render 'layouts/footer'
   = yield :javascript
 

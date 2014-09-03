@@ -52,6 +52,7 @@ class DrinksController < InheritedResources::Base
       :drink => [
         :name,
         :garnish_id,
+        :garnish2_id,
         :instructions,
         :description,
         drink_ingredients_attributes: [
