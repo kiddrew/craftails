@@ -1,4 +1,4 @@
 == render 'recipe'
 
-- if current_user.is_admin
+- if current_user and current_user.is_admin
   = link_to 'Edit', edit_drink_path(@drink), class: 'button'
