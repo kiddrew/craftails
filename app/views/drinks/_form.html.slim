@@ -2,7 +2,6 @@
   = f.error_notification
 
   = f.input :name
-
   = f.label :ingredients
   table#ingredient_list
     tr
@@ -10,8 +9,9 @@
       th Unit
       th Ingredient
       th
-    = f.fields_for :drink_ingredients do |dif|
-      = render "drink_ingredient_row", :f => dif
+    - @drink.drink_ingredients.each do |drink_ingredient|
+      = f.fields_for :drink_ingredients, drink_ingredient do |dif|
+        = render "drink_ingredient_row", :f => dif
 
   = f.input :garnish_id, collection: Garnish.all
   = f.input :instructions

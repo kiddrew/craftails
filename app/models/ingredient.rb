@@ -6,7 +6,7 @@ class Ingredient < ActiveRecord::Base
   #include TheSortableTree::Scopes
 
   has_many :drink_ingredients
-  has_many :drinks, through: :drink_ingredients
+  has_many :drinks, -> { uniq }, through: :drink_ingredients
   has_many :bar_ingredients
   has_many :bars, through: :bar_ingredients
 

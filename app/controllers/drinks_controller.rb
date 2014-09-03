@@ -50,6 +50,8 @@ class DrinksController < InheritedResources::Base
         :instructions,
         :description,
         drink_ingredients_attributes: [
+          :id,
+          :drink_id,
           :ingredient_id,
           :amount,
           :amount_unit,
