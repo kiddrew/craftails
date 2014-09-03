@@ -7,7 +7,9 @@
       ul
         - @drink.drink_ingredients.each do |di|
           li
-            = unit_pluralize(di.amount, di.amount_unit) + ' ' + di.ingredient.name
+            = unit_pluralize(di.amount, di.amount_unit)
+            |  
+            = link_to di.ingredient.name, di.ingredient
     p
       = @drink.instructions
     p
