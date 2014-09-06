@@ -40,7 +40,7 @@ class DrinksController < InheritedResources::Base
   def prepare_params
     tmp = {}
     params['drink']['drink_ingredients_attributes'].each do |k,v|
-      if v['amount'].present? and v['amount_unit'].present? and v['ingredient_id'].present?
+      if v['amount'].present? and v['ingredient_id'].present?
         tmp[k] = v
       end
     end
