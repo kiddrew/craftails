@@ -23,7 +23,7 @@
     p
       = drink_image @drink.image_url
 
-- if @drink.created_by
+- if @drink.created_by.present?
   .row
     .small-12.columns
       | Source: 
