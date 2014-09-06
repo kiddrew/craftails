@@ -1,5 +1,5 @@
 .row
-  .small-12
+  .small-12.columns
     h3= @drink.name
 .row
   .small-8.columns
@@ -18,12 +18,14 @@
       = @drink.instructions
     p
       = @drink.description
-    - if @drink.created_by
-      p
-        | Source: 
-        = @drink.created_by
 
   .small-4.columns
     p
       = drink_image @drink.image_url
 
+- if @drink.created_by
+  .row
+    .small-12.columns
+      | Source:
+      = @drink.created_by
+.row.margin
