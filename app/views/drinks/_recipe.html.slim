@@ -13,7 +13,7 @@
     - if @drink.garnish or @drink.garnish2
       p
         | Garnish with 
-        = @drink.garnish.name.indefinitize
+        = @drink.garnish.name.indefinitize.downcase
     p
       = @drink.instructions
     p
