@@ -10,7 +10,7 @@
             = unit_pluralize(di.amount, di.amount_unit)
             |  
             = link_to di.ingredient.name, di.ingredient
-    - if @drink.garnish
+    - if @drink.garnish or @drink.garnish2
       p
         | Garnish with 
         = @drink.garnish.name.indefinitize
