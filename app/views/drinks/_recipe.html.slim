@@ -12,7 +12,7 @@
             = link_to di.ingredient.name, di.ingredient
     p
       = @drink.instructions
-    - if @drink.garnish or @drink.garnish2
+    - if @drink.garnish
       p
         | Garnish with 
         = @drink.garnish.name.indefinitize.downcase
