@@ -9,11 +9,12 @@
   .small-4.columns
     p
       = drink_image @ingredient.image_url
-.row
-  .small-12.columns
-      h4 Drinks
-      - @ingredient.drinks.each do |i|
-        div= link_to i.name, i
+- if @ingredient.drinks
+  .row
+    .small-12.columns
+        h4 Drinks
+        - @ingredient.drinks.each do |i|
+          div= link_to i.name, i
 
 - if current_user.is_admin
   = link_to 'Edit', edit_ingredient_path(@ingredient), class: 'button'
