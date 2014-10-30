@@ -21,10 +21,12 @@ nav.top-bar data-topbar=''
                 = fa_icon 'search'
         /li= link_to 'My Bar', my_bar_path
         li= link_to 'Add Drink', new_drink_path
-        li= link_to 'Browse Ingredients', ingredients_path
+      li= link_to 'Browse Ingredients', ingredients_path
+      - if user_signed_in?
         li= link_to 'Add Ingredient', new_ingredient_path
         li= link_to 'My Account', edit_user_registration_path
         li= link_to "Logout", destroy_user_session_path, :method=>'delete'
-      - else
+
+      - if not user_signed_in?
         li= link_to 'Create account', new_user_registration_path
         li= link_to 'Sign in', new_user_session_path

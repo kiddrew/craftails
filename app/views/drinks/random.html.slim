@@ -4,7 +4,15 @@ hr
 
 == render 'recipe'
 
-= link_to 'Try another', randomizer_path, class: 'button'
+hr
+
+h5 Add a filter
+= form_tag randomizer_path, method: :get 
+  = label_tag "Ingredient"
+  = select_tag "ingredient", options_from_collection_for_select(Ingredient.sort_by_name, :id, :name, params[:ingredient])
+  hr
+
+  = submit_tag 'Try another', class: 'button'
 
 - if current_user and current_user.is_admin
   = link_to 'Edit', edit_drink_path(@drink), class: 'button'

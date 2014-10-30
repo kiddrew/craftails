@@ -32,7 +32,12 @@ class DrinksController < InheritedResources::Base
   end
 
   def random
-    @drink = Drink.order("random()").first
+    if params[:ingredient]
+      @ingredient = Ingredient.find_by!(id: params[:ingredient])
+      @drink = @ingredient.subtree.map(&:drinks).flatten.uniq.sample
+    else
+      @drink = Drink.order("random()").first
+    end
   end
 
   private
