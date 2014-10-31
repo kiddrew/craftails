@@ -9,7 +9,7 @@ hr
 h5 Add a filter
 = form_tag randomizer_path, method: :get 
   = label_tag "Ingredient"
-  = select_tag "ingredient", options_from_collection_for_select(Ingredient.sort_by_name, :id, :name, params[:ingredient])
+  = select_tag "ingredient", options_from_collection_for_select(Ingredient.sort_by_name, :id, :name, params[:ingredient]), :include_blank => true
   hr
 
   = submit_tag 'Try another', class: 'button'

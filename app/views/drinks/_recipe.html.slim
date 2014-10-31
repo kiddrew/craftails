@@ -15,7 +15,7 @@
     - if @drink.garnish
       p
         | Garnish with 
-        = @drink.garnish.name.indefinitize.downcase
+        = @drink.garnish.name.indefinitize.downcase + '.'
     p
       = @drink.description
 
